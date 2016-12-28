@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php require '../general/fonctions.php'; ?>
+
+<?php logged_only(); ?><!DOCTYPE html>
+
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -13,7 +16,7 @@
     <title>Test De Riasec</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/apps.css" rel="stylesheet">
+    <link href="../css/apps.css" rel="stylesheet">
 
   </head>
 
@@ -32,9 +35,10 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="Eleve/test.php">Test</a></li>
-            <li><a href="Eleve/resultatEleve.php">Mes Resultats</a></li>
-            <li><a href="Eleve/deconnexion.php">Deconnexion</a></li>
+            <li><a href="resultatPromo.php">Résultats</a></li>
+            <li><a href="gestionPromo.php">Promos</a></li>
+            <li><a href="gestionTest.php">Test</a></li>
+            <li><a href="deconnexionAdmin.php">Deconnexion</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

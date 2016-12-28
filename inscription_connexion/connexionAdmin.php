@@ -5,40 +5,42 @@
 if(!empty($_POST) && !empty($_POST['email']) && !empty($_POST['pwd']))
     {
         $bdd = mysqli_connect('localhost', 'root', '','test');
-        $req = "SELECT * FROM user WHERE MailUser = '".$_POST['email']."' ";
+        $req = ("SELECT * FROM user WHERE MailUser = '".$_POST['email']."' ");
         $res = mysqli_query($bdd, $req);
-        // faut creer verif que le mail entré est bien dans la bdd
         $row = mysqli_fetch_array($res, MYSQLI_ASSOC);
-        $pwd = sha1(($_POST['pwd']));
         
         if($row["NumUser"] != 0)
             {
-                if(($pwd==$row["PwdUser"]) && ($row["Admin"]==0))
+                
+                //hash le pwd pour ensuite le vérifier avec la valeur entrée de pwd de la bd
+                $pwd = sha1(($_POST['pwd']));
+        
+                if(($pwd==$row["PwdUser"]) && ($row["Admin"]==1))
                     {
+                        //on fait session + cookie? ou que session? ou que cookie?
                         $nom = $row["NomUser"];
                         $prenom = $row["PrenomUser"];
-                        $mail = $row["MailUser"];
                         setcookie('nom', "$nom", time()+ 365*24*3600); //cookie à durée d'un an
                         setcookie('prenom', "$prenom", time()+365*24*3600);
-                        setcookie('mail', "$mail", time()+365*24*3600);
                         session_start();
                         $_SESSION['user'] = $nom;
-                        $_SESSION['mail'] = $mail;
-                        header('Location: Eleve/espaceEleve.php');
-                
+                        header('Location: Admin/espaceAdmin.php');
+                        exit();
+            
                     }
         
                 else
                     {
                         echo 'la combinaison Mot de Passe - Utilisateur n est pas valide' ;
-                    
-                    }
+            
+                    } 
+                
             }
         else
             {
-                echo "Ce compte élève n'existe pas";
+                echo "Ce compte admin n'existe pas"; 
             }
-      
+        
     }
 
 

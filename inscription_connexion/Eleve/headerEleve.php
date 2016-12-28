@@ -1,3 +1,7 @@
+<?php require '../general/fonctions.php'; ?>
+
+<?php logged_only(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,8 +17,7 @@
     <title>Test De Riasec</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/apps.css" rel="stylesheet">
-    <script src = "js/bootstrap.js" type= "text/javascript"></script>
+    <link href="../css/apps.css" rel="stylesheet">
 
   </head>
 
@@ -33,9 +36,9 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="inscription.php">S'inscrire</a></li>
-            <li><a href="connexionEleve.php">Se connecter</a></li>
-            <li><a href="connexionAdmin.php">Admin</a></li>
+            <li><a href="test.php">Test</a></li>
+            <li><a href="resultatEleve.php">Mes Resultats</a></li>
+            <li><a href="deconnexionEleve.php">Deconnexion</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
