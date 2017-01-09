@@ -1,48 +1,59 @@
+<!-- Resources -->
+<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="https://www.amcharts.com/lib/3/radar.js"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+<script src="https://www.amcharts.com/lib/3/themes/none.js"></script>
+
+
 <script>
-var Realiste = '<?php echo $realiste ?>'
-var Investigateur = '<?php echo $investigatif ?>'
-var Artiste = '<?php echo $artistique ?>'
-var Entreprenant = '<?php echo $entrepreneur ?>'
-var Social = '<?php echo $social ?>'
-var Conventionnel = '<?php echo $conventionnel ?>'
+var Realiste = '<?php printf ("%6.2f",$realiste)?>'
+var Investigateur = '<?php printf ("%6.2f",$investigatif)  ?>'
+var Artiste = '<?php printf ("%6.2f",$artistique)  ?>'
+var Entreprenant = '<?php printf ("%6.2f",$entrepreneur)  ?>'
+var Social = '<?php printf ("%6.2f",$social)  ?>'
+var Conventionnel = '<?php printf ("%6.2f",$conventionnel)  ?>'
 
 
 
 var chart = AmCharts.makeChart( "chartdiv", {
   "type": "radar",
-  "theme": "chalk",
+  "theme": "none",
+
   "dataProvider": [ {
-    "country": "Realiste",
-    "litres": Realiste
+    "profil": "Realiste",
+    "type": Realiste
   }, {
-    "country": "Investigateur",
-    "litres": Investigateur
+    "profil": "Investigateur",
+    "type": Investigateur
   }, {
-    "country": "Artiste",
-    "litres": Artiste
+    "profil": "Artiste",
+    "type": Artiste
   }, {
-    "country": "Sociale",
-    "litres": Social
+    "profil": "Social",
+    "type": Social
   }, {
-    "country": "Entreprenant",
-    "litres": Entreprenant
+    "profil": "Entreprenant",
+    "type": Entreprenant
   }, {
-    "country": "Conventionnel",
-    "litres": Conventionnel
+    "profil": "Conventionnel",
+    "type": Conventionnel
   } ],
+
   "valueAxes": [ {
     "axisTitleOffset": 20,
     "minimum": 0,
-    "axisAlpha": 0.15
+    "axisAlpha": 0.9
   } ],
   "startDuration": 2,
+
   "graphs": [ {
-    "balloonText": "[[value]] personnalité",
+    "balloonText": "[[value]] pourcents",
     "bullet": "round",
-    "lineThickness": 2,
-    "valueField": "litres"
+    "lineThickness": 5,
+    "valueField": "type"
   } ],
-  "categoryField": "country",
+  "categoryField": "profil",
   "export": {
     "enabled": true
   }

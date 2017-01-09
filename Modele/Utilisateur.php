@@ -58,4 +58,16 @@
 		$res=$req->rowCount();
 		return $res;
 	}
+
+	function modif_promo_user($numuser,$numpromo)
+	{
+		// Connexion à la base de données
+		require_once("BD_connexion.php");
+	 	$bdd=connexion();
+
+	 	$req = $bdd->prepare("UPDATE user SET NumPromo=:numpromo WHERE NumUser=:numuser");
+	 	$req->bindParam(':numpromo', $numpromo);
+	 	$req->bindParam(':numuser', $numuser);
+	 	$req->execute();
+	}
 ?>

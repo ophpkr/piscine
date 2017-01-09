@@ -50,6 +50,7 @@
 		return $reponses;
 	}
 
+// calcul le resultat de chaque profil en fonction des reponses de l'utilisateur.
 function calcul_genre($id_user, $NumProfil)
 {
 
@@ -92,35 +93,41 @@ function calcul_genre($id_user, $NumProfil)
 
 
 
-	/*$req2 = $bd->prepare('
-	SELECT Reponse2
-	FROM repondre AS  R, proposition AS PR
-	WHERE R.NumUser= :id_user AND PR.NumProfil= :NumProfil AND PR.NumProp = R.NumProp');
-
-	$req2->execute(array(':id_user' => $id_user,':NumProfil' => $NumProfil));
-	$req2->execute();
-	$res2=$req2->rowCount();
-
-
-
-	$req3 = $bd->prepare('
-	SELECT Reponse3
-	FROM repondre AS  R, proposition AS PR
-	WHERE R.NumUser= :id_user AND PR.NumProfil= :NumProfil AND PR.NumProp = R.NumProp');
-
-	$req3->execute(array(':id_user' => $id_user,':NumProfil' => $NumProfil));
-	$req3->execute();
-	$res3=$req3->rowCount();*/
-
-
-
-
-
-	
-	/*$score += $res2 * 2 ; 
-	$score += $res3 * 1 ;*/
-
 	return $score;
+}
+
+// Verifie si un utilisateur à deja repondu à un groupe de question
+function reponse_deja_presente($numuser,$numgroupe)
+{
+	require_once("BD_connexion.php");
+ 	$bd=connexion();
+
+ 	// On recupère le Profil de la proposition 
+	$req = $bd->prepare('SELECT * FROM repondre WHERE NumUser=:numuser and NumGroupe =:numgroupe');
+	$req->bindParam(':numuser', $numuser);
+	$req->bindParam(':numgroupe', $numgroupe);
+
+	$req->execute();
+	$result = $req->fetch();
+	
+	return $result;
+
+}
+
+function ajout_reponse_user($numuser,$numgroupe,$reponse1,$reponse2,$reponse3)
+{
+	//connexion a la Base de donnée
+		require_once("BD_connexion.php");
+ 		$bd=connexion();
+
+		$req = $bd->prepare('INSERT INTO repondre(NumUser,NumGroupe, Reponse1, Reponse2, Reponse3) VALUES(?,?,?,?,?)');
+
+		// A la creation de l'utilisateur on initialise ça promo à 
+		$req->execute(array ($numuser,$numgroupe,$reponse1,$reponse2,$reponse3));
+
+		return 0;
+
+
 }
 
 ?>

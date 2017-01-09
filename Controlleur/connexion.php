@@ -39,9 +39,13 @@ require('../Modele/Utilisateur.php');
 		   		}
 		 	}
 
+		 	//Le couple email-pssword n'a pas été trouvé dans la bd, donc utilsateur inconnu, mauvais mmot de passe ou mauvais mail
 		 	else
-		 	{	
-		 		header("Location: ../Vue/connexion.php");
+		 	{	  
+		 		$msg ="Erreur dans les informations entrées ";
+		   		header("location:../Vue/homepage.php?connex=" .$msg);
+			 	exit();            
+		 		
 			}
 	
 
