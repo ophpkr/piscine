@@ -69,5 +69,14 @@
 	 	$req->bindParam(':numpromo', $numpromo);
 	 	$req->bindParam(':numuser', $numuser);
 	 	$req->execute();
+		
+	function ModifierMotDePasse($NouveauPwd, $NumUser)
+	{
+		$bd = BD_connect();
+
+		$req = $bd -> prepare("UPDATE user SET PwdUser ="'.$NouveauPwd.'" WHERE NumUser= "'.$NumUser.'" ");
+		$req -> execute();
+
+	}
 	}
 ?>
