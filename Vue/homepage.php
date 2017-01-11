@@ -17,15 +17,15 @@
 
 <div class="row">
     <div class="carousel" style="background-color:#e0f7fa">
-    <a class="carousel-item" href="http://www.polytech-montpellier.fr/index.php/formation/informatique-et-gestion-ig/presentation"><img src="images/ig.jpg"></a>
-    <a class="carousel-item" href="http://www.polytech-montpellier.fr/index.php/formation/eau-et-genie-civil-apprentissage/presentation"><img src="images/egc.jpg"></a>
-    <a class="carousel-item" href="http://www.polytech-montpellier.fr/index.php/formation/genie-biologique-agroalimentaire-gba/presentation"><img src="images/gba.jpg"></a>
-    <a class="carousel-item" href="http://www.polytech-montpellier.fr/index.php/formation/materiaux-mat/presentation"><img src="images/mat.jpg"></a>
-    <a class="carousel-item" href="http://www.polytech-montpellier.fr/index.php/formation/microelectronique-et-automatique-mea/presentation"><img src="images/mea.jpg"></a>
-    <a class="carousel-item" href="http://www.polytech-montpellier.fr/index.php/formation/mecanique-et-interactions-m-i/presentation"><img src="images/mi.jpg"></a>
-    <a class="carousel-item" href="http://www.polytech-montpellier.fr/index.php/formation/mecanique-structures-industrielles/presentation"><img src="images/msi.jpg"></a>
-    <a class="carousel-item" href="http://www.polytech-montpellier.fr/index.php/formation/systemes-embarques-se/presentation"><img src="images/se.jpg"></a>
-    <a class="carousel-item" href="http://www.polytech-montpellier.fr/index.php/formation/sciences-et-technologies-de-l-eau-ste/presentation"><img src="images/ste.jpg"></a>
+    <a class="carousel-item" href="http://www.polytech-montpellier.fr/index.php/formation/informatique-et-gestion-ig/presentation"><img src="images/ig.png"></a>
+    <a class="carousel-item" href="http://www.polytech-montpellier.fr/index.php/formation/eau-et-genie-civil-apprentissage/presentation"><img src="images/egc.png"></a>
+    <a class="carousel-item" href="http://www.polytech-montpellier.fr/index.php/formation/genie-biologique-agroalimentaire-gba/presentation"><img src="images/gba.png"></a>
+    <a class="carousel-item" href="http://www.polytech-montpellier.fr/index.php/formation/materiaux-mat/presentation"><img src="images/mat.png"></a>
+    <a class="carousel-item" href="http://www.polytech-montpellier.fr/index.php/formation/microelectronique-et-automatique-mea/presentation"><img src="images/mea.png"></a>
+    <a class="carousel-item" href="http://www.polytech-montpellier.fr/index.php/formation/mecanique-et-interactions-m-i/presentation"><img src="images/mi.png"></a>
+    <a class="carousel-item" href="http://www.polytech-montpellier.fr/index.php/formation/mecanique-structures-industrielles/presentation"><img src="images/msi.png"></a>
+    <a class="carousel-item" href="http://www.polytech-montpellier.fr/index.php/formation/systemes-embarques-se/presentation"><img src="images/se.png"></a>
+    <a class="carousel-item" href="http://www.polytech-montpellier.fr/index.php/formation/sciences-et-technologies-de-l-eau-ste/presentation"><img src="images/ste.png"></a>
   </div>
 </div>
 </div>
