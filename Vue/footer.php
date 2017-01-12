@@ -1,8 +1,8 @@
 <footer>
-    <div class="footer-copyright center-align" style="background-color:#6fcae8">
+    <div class="footer-copyright center-align" >
     
       <div class="container">
-      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      Made by <a class="orange-text text-lighten-3" >Materialize</a>
       </div>
       
     </div>

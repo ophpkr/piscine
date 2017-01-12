@@ -1,6 +1,6 @@
 
 <div class="navbar-fixed ">
-  <nav class="nav" role="navigation">
+  <nav class="nav" role="navigation" >
     <div class="nav-wrapper container">
     <a id="logo-container" href="homepage.php" class="brand-logo"><i class="material-icons">cloud</i>Test de RIASEC</a>
       <ul class="right hide-on-med-and-down">

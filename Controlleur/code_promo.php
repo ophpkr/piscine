@@ -2,6 +2,7 @@
 
 require('../Modele/Promotion.php');
 require('../Modele/Utilisateur.php');
+require('../Modele/Reponse.php');
 
         
 
@@ -10,7 +11,7 @@ require('../Modele/Utilisateur.php');
         		$codepromo=$_POST["codepromo"];
        		 	$numuser = $_COOKIE["user"];
 
-       		 	// Renvoie la promo a laquel appratient ce code
+       		 	// Renvoie la promo a laquel appartient ce code
         		$res= Correspondance_promo_code($codepromo);
 
         		$numpromo=$res['NumPromo'];
@@ -21,9 +22,22 @@ require('../Modele/Utilisateur.php');
 
         			//Affectation de l'utilisateur a sa promotion
         			modif_promo_user($numuser,$numpromo);
-        			header('Location: ../Vue/questionnaire.php');
-        		}
 
+                    // On verifie si l'utilisateur n'a pas deja réaliser le test
+                    $nb_reponses = Obtenir_nombre_reponses_user($numuser);
+
+                    // Si il a 12 réponse en bd c'est qu'il a terminer le test
+                    if($nb_reponses == 12)
+                    {   
+                        header('Location: ../Vue/resultat_user.php');
+                    }
+                    else
+                    {
+                        header('Location: ../Vue/questionnaire.php');
+                    }
+        			
+        		}
+                // Le code n'appartient a aucune promo
         		else
         		{
         		  $msg ="Code Promo incorrecte ";
@@ -31,6 +45,7 @@ require('../Modele/Utilisateur.php');
 			 	  exit(); 
         		}
         	}
+        // Pas de code entré ou cookie désactivé
         else
         	{
 

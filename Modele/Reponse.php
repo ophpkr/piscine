@@ -130,4 +130,21 @@ function ajout_reponse_user($numuser,$numgroupe,$reponse1,$reponse2,$reponse3)
 
 }
 
+	function Obtenir_nombre_reponses_user($numuser)
+	{
+		//connexion a la Base de donnée
+		require_once("BD_connexion.php");
+ 		$bd=connexion();
+
+ 		$req = $bd->prepare('SELECT COUNT(*) as cpt FROM repondre WHERE NumUser=:numuser');
+		$req->execute(array(':numuser' => $numuser));
+		$res=$req->fetch();
+
+		//On compte le nombre de ligne pour constater la presence ou non du couple email+mdp dans la bd
+		$nb =$res["cpt"];
+
+		return $nb;
+
+	}
+
 ?>

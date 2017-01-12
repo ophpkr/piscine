@@ -12,11 +12,11 @@
    <?php }?>
 
 <div class="container">
-<h3 class="center-align" id="bv" style="background-color:#e0f7fa"> Bienvenue sur votre plateforme : Test de RIASEC</h3> 
+<h3 class="center-align" id="degrade" > Bienvenue sur votre plateforme : Test de RIASEC</h3> 
 <p class="center-align"> Tout les départements peuvent effectuer le test et déduire leur profil principal </p>
 
 <div class="row">
-    <div class="carousel" style="background-color:#e0f7fa">
+    <div class="carousel" id="degrade">
     <a class="carousel-item" href="http://www.polytech-montpellier.fr/index.php/formation/informatique-et-gestion-ig/presentation"><img src="images/ig.png"></a>
     <a class="carousel-item" href="http://www.polytech-montpellier.fr/index.php/formation/eau-et-genie-civil-apprentissage/presentation"><img src="images/egc.png"></a>
     <a class="carousel-item" href="http://www.polytech-montpellier.fr/index.php/formation/genie-biologique-agroalimentaire-gba/presentation"><img src="images/gba.png"></a>

@@ -89,7 +89,7 @@
             <input type="hidden" name="numero" value="<?php echo $numGroupe;?>">
             <?php
             if($numGroupe == 12)
-                echo '<p class="right-align"><button class="btn waves-effect waves-light red btn " type="submit" name="action">Valider
+                echo '<p class="right-align"><button class="btn waves-effect waves-light green btn " type="submit" name="action">Valider
                       <i class="material-icons right">send</i>
                       </button></p>';
             else
@@ -104,13 +104,7 @@
 </main>
  
 
-<footer>
-    <div class="footer-copyright center-align red">
-      <div class="container ">
-      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
-      </div>
-    </div>
-  </footer>
+<?php include("./footer.php"); ?>
 
 
   <!--  Scripts
@@ -118,8 +112,7 @@
   <script src="assets/js/materialize.js"></script>
   <script src="assets/js/init.js"></script>-->
    
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="assets/js/materialize.min.js"></script>
+   
 
 
 

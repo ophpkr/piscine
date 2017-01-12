@@ -1,5 +1,6 @@
 <?php
 
+
 require('../Modele/Reponse.php');
 
         $numgroupe=$_POST["numero"];

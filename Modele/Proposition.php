@@ -15,3 +15,17 @@
 		$reponses = $req->fetchAll();
 		return $reponses;
 	}
+
+
+	function Modifier_proposition($numprop,$contenuprop)
+	{
+		//connexion a la Base de donnée
+		require_once("BD_connexion.php");
+ 		$bd=connexion();
+
+ 		$req = $bd->prepare("UPDATE proposition SET ContenuProp =:contenuprop WHERE NumProp = :numprop");
+		$req->bindParam(':numprop', $numprop);
+		$req->bindParam(':contenuprop', $contenuprop);
+		$req->execute();
+
+	}
