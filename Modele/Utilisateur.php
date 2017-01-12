@@ -70,4 +70,31 @@
 	 	$req->bindParam(':numuser', $numuser);
 	 	$req->execute();
 	}
+
+		function verifpwd($pwd, $numuser)//$pwd est le mot de passe hashé; True si le pwd correspond au pwd de l'utilisateur
+	{
+		require_once("BD_connexion.php");
+		$bd = connexion();
+		
+		$req = $bd->prepare("SELECT * FROM user WHERE NumUser=:numuser AND PwdUser= :pwd");
+		$req->execute(array(':numuser' => $numuser,':pwd' => $pwd));
+
+		//On compte le nombre de ligne pour constater la presence ou non du couple email+mdp dans la bd
+		$res=$req->rowCount();
+		return $res;
+		
+	}
+	
+	function modifpwd($nouveaupwd, $numuser)
+	{
+		require_once("BD_connexion.php");
+		$bd = connexion();
+
+		$req = $bd -> prepare("UPDATE user SET PwdUser=:nouveaupwd WHERE NumUser=:numuser");
+		$req->bindParam(':numuser', $numuser);
+	 	$req->bindParam(':nouveaupwd', $nouveaupwd);
+		$req -> execute();
+
+	}
+	
 ?>
