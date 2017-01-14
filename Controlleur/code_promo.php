@@ -15,9 +15,11 @@ require('../Modele/Reponse.php');
         		$res= Correspondance_promo_code($codepromo);
 
         		$numpromo=$res['NumPromo'];
+                $etat= Etat($numpromo);
+                $etat = $etat["OuverturePromo"];
 
         		// Si la requete à renvoyer une promo
-        		if(!empty($numpromo))
+        		if(!empty($numpromo) and $etat == 1)
         		{
 
         			//Affectation de l'utilisateur a sa promotion
@@ -40,7 +42,7 @@ require('../Modele/Reponse.php');
                 // Le code n'appartient a aucune promo
         		else
         		{
-        		  $msg ="Code Promo incorrecte ";
+        		  $msg ="Code Promo incorrecte ou session non ouverte ";
 		   		  header("location:../Vue/code_promo.php?msg=" .$msg);
 			 	  exit(); 
         		}

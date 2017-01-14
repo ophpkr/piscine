@@ -12,8 +12,8 @@
    <?php }?>
 
 <div class="container">
-<h3 class="center-align" id="degrade" > Bienvenue sur votre plateforme : Test de RIASEC</h3> 
-<p class="center-align"> Tout les départements peuvent effectuer le test et déduire leur profil principal </p>
+<h2 class="center-align" id="degrade" > Bienvenue sur votre plateforme : Test de RIASEC</h2> 
+
 
 <div class="row">
     <div class="carousel" id="degrade">

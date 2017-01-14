@@ -56,11 +56,9 @@
 		require_once("BD_connexion.php");
  		$bd=connexion();
 
- 		$req = $bd->prepare("INSERT INTO promotion(NomPromo, AnneePromo, CodePromo) VALUES (:Nompromo, :Annee, :CodePromo)");
-		$req->bindValue(":Nompromo", $nomprom);
-		$req->bindValue(":Annee", $annee);
-		$req->bindValue(":CodePromo", $codepromo);
-		$req->execute();	
+ 		$req = $bd->prepare("INSERT INTO promotion(NomPromo, AnneePromo, CodePromo,OuverturePromo) VALUES (?,?,?,?)");
+		$req->execute(array ($nompromo,$annee,$codepromo,0));
+		
 
 		
 	}
@@ -113,6 +111,53 @@
 		$nb_eleve = $res["nb"];
 		return $nb_eleve;
 
+	}
+
+	function Etat($numpromo)
+	{
+		require_once("BD_connexion.php");
+ 		$bd=connexion();
+
+ 		// recupere toute les personnes de la promo entré en paramètre qui ont répondu aux questionnaire
+		$req = $bd->prepare('SELECT OuverturePromo FROM promotion  WHERE NumPromo =:numpromo ');
+
+		$req->execute(array(':numpromo' => $numpromo));
+		$res=$req->fetch();
+
+		
+		return $res;
+
+	}
+
+	function Modifier_etat($numpromo,$etat)
+	{
+		require_once("BD_connexion.php");
+ 		$bd=connexion();
+
+ 		if($etat == 1)
+ 		{
+	 		$req = $bd->prepare("UPDATE promotion SET OuverturePromo=0 WHERE NumPromo=:numpromo");
+	 		$req->execute(array (':numpromo' => $numpromo));
+		}
+	 	else
+	 	{
+	 		$req = $bd->prepare("UPDATE promotion SET OuverturePromo=1 WHERE NumPromo=:numpromo");
+	 		$req->execute(array (':numpromo' => $numpromo));
+	 	}
+
+	}
+
+	// Creation d'un promotion
+	function Supprimer_promo($numpromo)
+	{
+		require_once("BD_connexion.php");
+ 		$bd=connexion();
+
+ 		$req = $bd->prepare("DELETE FROM promotion WHERE NumPromo =:numpromo");
+		$req->execute(array (':numpromo' => $numpromo));
+		
+
+		
 	}
 
 ?>

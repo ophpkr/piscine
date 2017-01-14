@@ -7,101 +7,120 @@
 <?php include("./head.php"); ?>
 <main>
 
-<div class="navbar-fixed">
-   <nav class="nav" role="navigation">
+
+  <nav class="nav" role="navigation">
     <div class="nav-wrapper container">
-    <a id="logo-container" href="homepage_user.php" class="brand-logo">Test de RIASEC</a>
-      <ul class="right hide-on-med-and-down">
-
-       
-        <li><a href="homepage_admin.php"><i class="material-icons right">dashboard</i>Tableau de bord</a></li>
-        <li><a href="../Controlleur/deconnexion.php"><i class="material-icons right">settings_power</i>Déconnexion</a></li>
-      </ul>
-
-     <ul id="nav-mobile" class="side-nav">
-        
-        
-        <li><a href="homepage_admin.php">Tableau de bord</a></li>
-        <li><a href="../Controlleur/deconnexion.php">Déconnexion</a></li>
-      </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">Menu</i></a>
+      <a id="logo-container" href="homepage_admin.php" class="brand-logo">Test de RIASEC</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="homepage_admin.php"><i class="material-icons right">dashboard</i>Tableau de bord</a></li>
+          <li><a href="../Controlleur/deconnexion.php"><i class="material-icons right">settings_power</i>Déconnexion</a></li>
+        </ul>
+      
+        <ul id="nav-mobile" class="side-nav">  
+          <li><a href="homepage_admin.php">Acceuil</a></li>
+          <li><a href="homepage_admin.php">Tableau de bord</a></li>
+          <li><a href="../Controlleur/deconnexion.php">Déconnexion</a></li>
+       </ul>
+      <a href="homepage_admin.php" data-activates="nav-mobile" class="button-collapse">Menu</a>
     </div>
   </nav>
-</div>
-
- <?php if (isset($_GET["fail"])) 
-  { ?>
-  <p class="center-align red"><?php
-  // On affiche donc le contenu du message d'erreur sur la page pour avertir l'utilisateur de son erreur
-  echo $_GET["fail"];?></p>
-  
-   <?php }
-
-   else if(isset($_GET["reussi"]))
-    {?>
-  <p class="center-align green"><?php
-  echo $_GET["reussi"];?></p>
-  <?php }?>
 
 
-<div class="container">
-    <div class="section">
+  <?php 
 
-      <!--   Icon Section   -->
+  if (isset($_GET["fail"])) 
+  { 
+  ?>
+  <p class="center-align red">
+
+  <!-- On affiche donc le contenu du message d'erreur sur la page pour avertir l'utilisateur de son erreur-->
+  <?php echo $_GET["fail"];?> </p>
+    
+  <?php }
+
+  else if(isset($_GET["reussi"]))
+  {
+  ?>
+  <p class="center-align green"><?php echo $_GET["reussi"];?></p>
+  <?php } ?>
+
+
+  <div class="container">
+   
+    <h3 class="center-align" > Tableau de bord </h3>
+
+   
+    <div class="row">
+      <div class="col s4 m4 " >
+        <img src="images/stati.jpg" class="responsive-img "  >
+      </div>
+      <div class="col s4 m4 " >
+        <img src="images/dash.png" class="responsive-img " >
+      </div>
+      <div class="col s4 m4 " >
+        <img src="images/propo.jpeg" class=" responsive-img "  >
+      </div>
+    </div>
+
       <div class="row">
-        <div class="col s3 hoverable " >
+        <div class="col s4 m4 " style="background-color: #7cb342 " >
           <div class="icon-block">
-            <img src="images/pm.jpg" class="circle responsive-img">
-            <h5 id="Acceuil" class="center">Résultats Promo</h5>
-
-            <p class="light">Affichage de la liste de toute les missions accepté, possibilité de visionner les detail de chaque reservation.</p>
-            <p><a  href="stat_promo.php" class="waves-effect waves-light btn-large"><i class="small material-icons right">supervisor_account</i>Visualiser</a></p>
+            
+              <h5 id="Acceuil" class="center">Statistique et Résultat </h5>
+              <p class="light"> Observer les résultats de chaque promotion</p>
+              <p class="light"> Visualisation radar / camembert / tableau ordonnée</p>
+              </br>
+            
           </div>
         </div>
+      
 
-     
-
-        <div class="col s3 hoverable" >
+        <div class="col s4 m4 " style="background-color:#039be5" >
           <div class="icon-block">
-            <img src="images/polytech.jpg"  class="circle responsive-img">
-            <h5 class="center">Créer Promo</h5>
-
-            <p class="light">Gestion de la base de données vehicule et chauffeur, possibilité d'ajouter ou de supprimer des vehicules ou des chauffeurs</p>
-            <p><a  href="#AjoutPromo" class="waves-effect waves-light btn-large"><i class="small material-icons right">supervisor_account</i>Créer</a></p>
-            <p><a  href="gestion_promo.php" class="waves-effect waves-light btn-large"><i class="small material-icons right">supervisor_account</i>Créer</a></p>
+           
+              
+              <h5 class="center">Gestion Formation</h5>
+              <p class="light">Ouvrir/ Fermer le questionnaire à la votre promotion de votre choix</p>
+              <p class="light">Créer une promotion, Supprimer un promotion, récuperer le code de chaque promotion</p>
+              
+              
           </div>
         </div>
-     
-
     
-    
-
-      <!--   Icon Section   -->
      
-        <div class="col s3 hoverable"  >
+        <div class="col s4 m4 " style="background-color:#5e35b1" >
           <div class="icon-block">
-            <img src="images/riasec.png" class="circle responsive-img ">
-            <h5 id="Acceuil" class="center">Modifier les propositions</h5>
-
-            <p class="light">Affichage de la liste de toute les missions accepté, possibilité de visionner les detail de chaque reservation.</p>
-            <p><a  href="propositions.php" class="waves-effect waves-light btn-large"><i class="small material-icons right">supervisor_account</i>Gérer</a></p>
+            
+              <h5 id="Acceuil" class="center">Modifier les propositions</h5>
+              <p class="light">Modification des propositions.</p>
+              <p class="light">Organisation par groupe</p></br></br>
+      
           </div>
         </div>
 
-           <div class="col s3 hoverable"  >
-          <div class="icon-block">
-           <img src="images/holland.png" class="circle responsive-img ">
-            <h5 class="center">Liste Etudiant</h5>
+    </div>
 
-            <p class="light"> Affichage de la liste de tout les inscrits du site, possibilité de promouvoir les membres en admin , recherche par nom.</p> 
-            <p><a  href="gestion_membre.php" class="waves-effect waves-light btn-large"><i class="small material-icons right">supervisor_account</i>Gérer</a></p>
-          </div>
-        </div>
+    <div class="row">
+      <div class="col s4 m4 " >
+      <div class="center">
+        <a  href="stat_promo.php" class="waves-effect waves-light green btn-large">Statistiques</i></a>
+      </div>
+      </div>
+      <div class="col s4 m4 " >
+      <div class="center">
+      <a  href="gestion_promo.php" class="waves-effect waves-light blue btn-large">Gérer les promo</a>
+      </div>
+      </div>
+      <div class="col s4 m4 " >
+      <div class="center">
+      <a  href="propositions.php" class="waves-effect waves-light purple btn-large">Modifier</a>
+      </div>
+      </div>
+    </div>
+    <!-- FIN DU CONTENAIRE-->
+    </div>
 
-     
- </div>
-   </div> 
-  </div>
+
 
 
     <div id="AjoutPromo" class="modal  ">
@@ -143,10 +162,6 @@
      
     </div>
   </div>
-
-</div>
-</div>
-
   
 
 
@@ -159,30 +174,10 @@
   <script>  
   $(".button-collapse").sideNav(); 
   </script>
-  <script>  
-  $(document).ready(function(){
-    $('.slider').slider({full_width: true});
-    });
-</script>
-<!-- Script pour le modal de connexion-->
-<script>
- $(document).ready(function(){
-    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-    $('.modal').modal();
-  });
+ 
 
-      </script>
 
-<script> 
-// Pause slider
-$('.slider').slider('pause');
-// Start slider
-$('.slider').slider('start');
-// Next slide
-$('.slider').slider('next');
-// Previous slide
-$('.slider').slider('prev');
-</script>
+
 
   </body>
 </html>

@@ -1,0 +1,155 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+
+.modal
+{
+ width: 50% !important ; 
+ max-height: 90% !important;
+ overflow-y: hidden !important ;
+
+
+background-color:#0097a7;
+
+}
+
+.nav,.contain,.footer-copyright
+{
+
+background-color:#0097a7;
+
+
+}
+
+h1,h2,h3,h4,h5
+{
+	color:white;
+	text-shadow: 2px 2px black;
+}
+p
+{
+  color:white;
+  text-shadow: 1px 1px black;
+}
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eeeeee+0,cccccc+44,cccccc+48 */
+background: rgb(238,238,238); /* Old browsers */
+background: -moz-linear-gradient(-45deg,  rgba(238,238,238,1) 0%, rgba(204,204,204,1) 44%, rgba(204,204,204,1) 48%); /* FF3.6-15 */
+background: -webkit-linear-gradient(-45deg,  rgba(238,238,238,1) 0%,rgba(204,204,204,1) 44%,rgba(204,204,204,1) 48%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(135deg,  rgba(238,238,238,1) 0%,rgba(204,204,204,1) 44%,rgba(204,204,204,1) 48%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+html
+{
+  font-family: 'Raleway', sans-serif;
+}
+}
+
+#chartdiv {
+  width: 100%;
+  height: 500px;
+} 
+
+
+ul { padding-left: 20px; }
+.btn { font-size: .8em; }
+/* not sure why this is needed... */
+.material-icons { vertical-align: bottom; }
+
+#modal1
+{
+ width: 30% !important ; 
+ max-height: 60% !important;
+ overflow-y: hidden !important ;
+}
+
+#modal2
+{
+ width: 40% !important ; 
+ max-height: 90% !important;
+ overflow-y: hidden !important ;
+}
+
+#bv
+{
+  color:cyan darken-2;
+}
+
+#promo{
+  background: #ccc;
+  visibility: visible;
+}
+
+#block
+{
+  width: 30%;
+  height: 200px;
+}
+
+
+
+
+}
+
+#degrade
+{
+background-color:#0097a7;
+}
+
+  /* label color */
+   .input-field label {
+     color: #000;
+   }
+   /* label focus color */
+   .input-field input[type=text]:focus + label {
+     color: #FFF;
+   }
+   /* label focus color */
+   .input-field input[type=email]:focus + label {
+     color: #FFF;
+   }
+   /* label focus color */
+   .input-field input[type=password]:focus + label {
+     color: #FFF;
+   }
+   /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid #FFF;
+     box-shadow: 0 1px 0 0 #FFF;
+   }
+
+   /* valid color */
+   .input-field input[type=text].valid {
+     border-bottom: 1px solid #FFF;
+     box-shadow: 0 1px 0 0 #FFF;
+   }
+   /* invalid color */
+   .input-field input[type=text].invalid {
+     border-bottom: 1px solid #FFF;
+     box-shadow: 0 1px 0 0 #FFF;
+   }
+   /* icon prefix focus color */
+   .input-field .prefix.active {
+     color: #FFF;
+   }

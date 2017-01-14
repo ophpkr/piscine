@@ -9,29 +9,38 @@
         
 ?>
 <?php include("./head.php"); ?>
+   <style>
+#chartdiv {
+  width:90%;
+  height: 400px;
+} 
+#chartdiv2 {
+  width: 100%;
+  height: 500px;
+}
+#chartdiv3 {
+  width : 100%;
+  height  : 500px;
+}
+</style>
 <main>
 
-<div class="navbar-fixed">
-   <nav class="nav" role="navigation">
+<nav class="nav" role="navigation">
     <div class="nav-wrapper container">
-    <a id="logo-container" href="homepage_user.php" class="brand-logo">Test de RIASEC</a>
-      <ul class="right hide-on-med-and-down">
-
-       
-        <li><a href="homepage_admin.php"><i class="material-icons right">dashboard</i>Tableau de bord</a></li>
-        <li><a href="../Controlleur/deconnexion.php"><i class="material-icons right">settings_power</i>Déconnexion</a></li>
-      </ul>
-
-     <ul id="nav-mobile" class="side-nav">
-        
-        
-        <li><a href="homepage_admin.php">Tableau de bord</a></li>
-        <li><a href="../Controlleur/deconnexion.php">Déconnexion</a></li>
-      </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">Menu</i></a>
+      <a id="logo-container" href="homepage_admin.php" class="brand-logo">Test de RIASEC</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="homepage_admin.php"><i class="material-icons right">dashboard</i>Tableau de bord</a></li>
+          <li><a href="../Controlleur/deconnexion.php"><i class="material-icons right">settings_power</i>Déconnexion</a></li>
+        </ul>
+      
+        <ul id="nav-mobile" class="side-nav">  
+          <li><a href="homepage_admin.php">Acceuil</a></li>
+          <li><a href="homepage_admin.php">Tableau de bord</a></li>
+          <li><a href="../Controlleur/deconnexion.php">Déconnexion</a></li>
+       </ul>
+      <a href="homepage_admin.php" data-activates="nav-mobile" class="button-collapse">Menu</a>
     </div>
   </nav>
-</div>
 
   
 
@@ -124,12 +133,24 @@ foreach($profil as $key => $val)
 
 
 ?>
-
-<div class="container" >
-<h3 class="center-align" style="background-color:#6fcae8"> <?php echo $nb_eleves?> personnes ont terminé le Test ! </h3>
-     <p class="center-align"> Consultez les résultats.</p>
 <div class="row">
-<div class="col s8 offset-s2  blue lighten-4" >
+<div class="container">
+  <h3 class="center"> Statistiques</h3>
+  
+        <div class="col s5  ">
+          <div class="card cyan darken-2">
+            <div class="card-content white-text">
+              <span class="card-title"><h5 class="center "> Test de RIASEC terminé par <?php echo $nb_eleves?> personnes dans cette promo ! </h5></span>
+              <p>Vous trouverez dans cette page un tableau trié par ordre décroissant. ATTENTION : Celui-ci prend seulement en compte les elèves de cette promotion qui ont terminé le questionnaire</p>
+              <p>Différent choix de visualisation des résultats vous sont proposé : Optez pour le radar / le diagramme en baton ou le camembert</p>
+            </div>
+          </div>
+      </div>
+
+
+
+
+<div class="col s5 offset-s2" >
   <table class="responsive-table bordered highlight centered striped">
         <thead>
           <tr>
@@ -174,113 +195,86 @@ foreach($profil as $key => $val)
           </tr>
         </tbody>
   </table>
+
+
+
+
+
+</div>
+</div>
 </div>
 </div>
 
- <!-- Modal Trigger -->
- <div class="col s4 offset-s4 center-align">
-  <a class="waves-effect waves-light btn red center-align " href="#radar"><i class="material-icons right">polymer</i> Affichage radar</a>
-</div>
+ <div class="container">
+  <div class="row">
+      <div class="col s4 m4" style="background-color: #0097a7 ">
+      </br>
+        <div class=center>
+          <a class="waves-effect  btn red center-align " href="#radar"> Radar</a>
+        </div>
+        </br>
+      </div>
+      <div class="col s4 m4" style="background-color: #0097a7 ">
+      </br>
+        <div class=center>
+          <a class="waves-effect  btn red center-align " href="#baton"> Baton </a>
+        </div>
+        </br>
+      </div>
+      <div class="col s4 m4" style="background-color: #0097a7  ">
+      </br>
+        <div class=center>
+          <a class="waves-effect  btn red center-align " href="#camembert"> Camembert</a>
+        </div>
+        </br>
+      </div>
+  </div>
+</div> 
 
   <div id="radar" class="modal  ">
-  <div class="modal-content">
-    <h3 class="center-align"> Vos Résultats</h3>
-     <p class="center-align "> Placer le curseur sur les points pour connaitre votre pourcentage</p>
+    <div class="modal-content">
+      <h3 class="center-align"> Résultats</h3>
+      <p class="center-align "> Placer le curseur sur les points pour connaitre le pourcentage</p>
 
-        <div class="row">
-    <div class=" grey lighten-5" >
-      <?php include("./radar.php"); ?>
-    </div>
-  </div>
+      <div class="row">
+        <div class=" grey lighten-5" >
+          <?php include("./radar.php"); ?>
+        </div>
+      </div>
    </div>
-   </div>   
+  </div>  
 
-  <div id="Social" class="modal  ">
-  <div class="modal-content">
-    <h3 class="center-align"> Etre Social</h3>
-     <p class="center-align "> brrrr</p>
+  <div id="camembert" class="modal  ">
+    <div class="modal-content">
+      <h3 class="center-align"> Résultats</h3>
+      
 
-        <div class="row">
-    <div class=" blue lighten-4" >
-     
-    </div>
-  </div>
+      <div class="row">
+        <div class=" grey lighten-5" >
+          <?php include("./camembert.php"); ?>
+        </div>
+      </div>
+   </div>
+  </div>   
 
-</div>
-</div>
+  <div id="baton" class="modal  ">
+    <div class="modal-content">
+      <h3 class="center-align">Résultats</h3>
+      
 
-  <div id="Realiste" class="modal  ">
-  <div class="modal-content">
-    <h3 class="center-align"> Etre Réaliste</h3>
-     <p class="center-align "> brrrr</p>
+      <div class="row">
+        <div class=" grey lighten-5" >
+          <?php include("./baton.php"); ?>
+        </div>
+      </div>
+   </div>
+  </div>   
 
-        <div class="row">
-    <div class=" blue lighten-4" >
-     
-    </div>
-  </div>
-
-</div>
-</div>
-
-  <div id="Investigatif" class="modal  ">
-  <div class="modal-content">
-    <h3 class="center-align"> Etre Investigatif</h3>
-     <p class="center-align "> brrrr</p>
-
-        <div class="row">
-    <div class=" blue lighten-4" >
-     
-    </div>
-  </div>
-
-</div>
-</div>
-
-  <div id="Artistique" class="modal  ">
-  <div class="modal-content">
-    <h3 class="center-align"> Etre Artistique</h3>
-     <p class="center-align "> brrrr</p>
-
-        <div class="row">
-    <div class=" blue lighten-4" >
-     
-    </div>
-  </div>
-
-</div>
-</div>
-
-  <div id="Entrepreneur" class="modal  ">
-  <div class="modal-content">
-    <h3 class="center-align"> Etre Entrepreneur</h3>
-     <p class="center-align "> brrrr</p>
-
-        <div class="row">
-    <div class=" blue lighten-4" >
-     
-    </div>
-  </div>
-
-</div>
-</div>
-  <div id="Conventionnel" class="modal  ">
-  <div class="modal-content">
-    <h3 class="center-align"> Etre Conventionnel</h3>
-     <p class="center-align "> brrrr</p>
-
-        <div class="row">
-    <div class=" blue lighten-4" >
-     
-    </div>
-  </div>
-
-</div>
-</div>
+  <?php include("./descriptif.php"); ?>
 
 
 
-</div>
+
  </main>
 
  <?php include("./footer.php"); ?>
@@ -293,6 +287,10 @@ foreach($profil as $key => $val)
  $(document).ready(function(){
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
     $('.modal').modal();
+  });
+
+  $(document).ready(function(){
+    $('.collapsible').collapsible();
   });
 
       </script>

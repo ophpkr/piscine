@@ -29,7 +29,18 @@
   </nav>
 </div>
 
-<h2 class = "center "> Gestion des propositions</h2>
+<div class="row">
+<div class="container">
+    <div class="col s12  ">
+          <div class="card cyan darken-2">
+            <div class="card-content white-text">
+              <span class="card-title"><h4 class="center "> Gestion des propositions  </h4></span>
+        
+            </div>
+          </div>
+    </div>
+   </div>
+  </div>
    
     <?php if (isset($_GET["propno"])) 
   { ?>

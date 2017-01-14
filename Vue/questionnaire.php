@@ -9,27 +9,24 @@
 <?php include("./head.php"); ?>
 <main>
 
-<div class="navbar-fixed">
-   <nav class="nav" role="navigation">
-    <div class="nav-wrapper container">
-    <a id="logo-container" href="homepage_user.php" class="brand-logo">Test de RIASEC</a>
-      <ul class="right hide-on-med-and-down">
 
-        <li><a href="homepage_user.php"><i class="material-icons right">settings</i>Paramètre</a></li>
+ <nav class="nav" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="homepage_user.php" class="brand-logo">Test de RIASEC</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="../Controlleur/resultat.php"><i class="material-icons right">airplay</i>Résultats</a></li>
+          <li><a href="code_promo.php"><i class="material-icons right">perm_identity</i>Démarrer le Test</a></li>
+          <li><a href="../Controlleur/deconnexion.php"><i class="material-icons right">settings_power</i>Déconnexion</a></li>
+        </ul>
+      
+        <ul id="nav-mobile" class="side-nav">  
+          <li><a href="../Controlleur/resultat.php"><i class="material-icons right">airplay</i>Résultats</a></li>
         <li><a href="code_promo.php"><i class="material-icons right">perm_identity</i>Démarrer le Test</a></li>
         <li><a href="../Controlleur/deconnexion.php"><i class="material-icons right">settings_power</i>Déconnexion</a></li>
-      </ul>
-
-     <ul id="nav-mobile" class="side-nav">
-        <li><a href="homepage_user.php">Paramètre</a></li>
-        
-        <li><a href="questionnaire.php">Démarrer le Test</a></li>
-        <li><a href="../Controlleur/deconnexion.php">Déconnexion</a></li>
-      </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">Menu</i></a>
+       </ul>
+      <a href="homepage_user.php" data-activates="nav-mobile" class="button-collapse">Menu</a>
     </div>
   </nav>
-</div>
    
 
 <?php
@@ -49,8 +46,19 @@
 
 <div class="container">
 
+  <div class="col s5  ">
+          <div class="card cyan darken-2">
+            <div class="card-content white-text">
+              <span class="card-title"><h5 class="center "> Groupe numero : <?php echo "$numGroupe"; ?></h5></span>
+              <p>-Vous devez obligatoirement faire vos 3 choix pour passer au groupe suivant.</p>
+              <p>-Une fois que vous appuyez sur suivant vos données sont envoyées et ne sont plus modifiable meme par un retour en arrière (le groupe vous sera proposé mais les réponses ne seront pas prisent en compte).</p>
+            </div>
+          </div>
+      </div>
+
 <form action=../Controlleur/questionnaire.php method="post">
-<p><h3> Groupe numero : <?php echo "$numGroupe"; ?></h3></p>
+
+          <div style="background-color:#bdbdbd ">
             <table class="responsive-table highlight bordered striped">
                 <thead> <!-- En-tête du tableau -->
                 <tr>
@@ -86,6 +94,7 @@
                 ?>
                 </tbody>
             </table>
+            </div>
             <input type="hidden" name="numero" value="<?php echo $numGroupe;?>">
             <?php
             if($numGroupe == 12)

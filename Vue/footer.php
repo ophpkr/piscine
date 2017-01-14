@@ -2,7 +2,7 @@
     <div class="footer-copyright center-align" >
     
       <div class="container">
-      Made by <a class="orange-text text-lighten-3" >Materialize</a>
+      Projet Piscine 2017
       </div>
       
     </div>
