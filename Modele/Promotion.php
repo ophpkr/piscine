@@ -160,4 +160,17 @@
 		
 	}
 
+	function Obtenir_info_promo($numpromo)
+	{
+		require_once("BD_connexion.php");
+ 		$bd=connexion();
+
+ 		$req = $bd->prepare('SELECT * FROM promotion  WHERE NumPromo =:numpromo ');
+
+		$req->execute(array(':numpromo' => $numpromo));
+		$res=$req->fetch();
+
+		return $res;
+	}
+
 ?>

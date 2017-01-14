@@ -53,6 +53,7 @@
 
   //recuperation de la promo choisi
   $NumPromo=htmlspecialchars($_POST["numpromo"]);
+  $info = Obtenir_info_promo($NumPromo);
 
   // On va chercher tout les eleves de cette promo qui ont répondu a aux moins un groupe de question du questionnaire
   $touteleves = Obtenir_reponses_promo($NumPromo);
@@ -135,7 +136,8 @@ foreach($profil as $key => $val)
 ?>
 <div class="row">
 <div class="container">
-  <h3 class="center"> Statistiques</h3>
+  <h3 class="center"> Statistiques: <?php echo $info["NomPromo"]; ?> de l'année <?php echo $info["AnneePromo"]; ?> </span></h3>
+
   
         <div class="col s5  ">
           <div class="card cyan darken-2">

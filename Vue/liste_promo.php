@@ -29,7 +29,7 @@
 
 <div class="row">
         <div class="col s6 offset-s3 ">
-          <div class="card blue-grey darken-1">
+          <div class="card  cyan darken-2">
             <div class="card-content white-text">
               <span class="card-title"><h3 class="center "> Vous avez choisi la formation : <?php echo $_GET["nompromo"]; ?></h3></span>
               <p>Le tableau ci-dessous vous propose une liste complète des promotions enregistrées en base de données.</p>

@@ -35,10 +35,10 @@
           <div class="card cyan darken-2">
             <div class="card-content white-text">
               <span class="card-title"><h5 class="center "> Gestion des Promotions  </h5></span>
-              <p>Vous pouvez créer un nouvelle promotion en cliquant sur le bouton à droite. </p>
-              <p>Vous pouvez a tout moment ouvrir ou fermer les questionnaire aux promotions de votre choix.</p>
-              <p>Vous pouvez voir le code que vous avez défini pour chaque promo et supprimer une promotion</p>
-              <p>Chaque promotion est rangé dans la formation qui lui correspond</p>
+              <p class="center">Vous pouvez créer un nouvelle promotion en cliquant sur le bouton à droite. </p>
+              <p class="center">Vous pouvez a tout moment ouvrir ou fermer les questionnaire aux promotions de votre choix.</p>
+              <p class="center">Vous pouvez voir le code que vous avez défini pour chaque promo et supprimer une promotion</p>
+              <p class="center">Chaque promotion est rangé dans la formation qui lui correspond</p>
             </div>
           </div>
     </div>
