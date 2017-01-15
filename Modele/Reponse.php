@@ -3,6 +3,10 @@
 	/* Obtient toute les réponses de l'utilisateur entré en paramètre*/
 	function Obtenir_reponses_user($numuser)
 	{
+		/*Préconditions : 	- $numuser : l'id d'un utilisateur
+		Selectionne tous les reponses de l'utilisateur $numuser et les renvoie
+		*/
+
 		//connexion a la Base de donnée
 		require_once("BD_connexion.php");
  		$bd=connexion();
@@ -19,7 +23,10 @@
 	/* Permet d'obtenir le type de profil de la proposition entré en paramètre */
 	function Obtenir_profil_question($numprop)
 	{
-
+		/*Préconditions : 	- $numprop : l'id d'une proposition
+		Renvoie le nom du profil associé à la proposition $numprop
+		*/
+		
 		require_once("BD_connexion.php");
  		$bd=connexion();
 
@@ -37,7 +44,10 @@
 	// Récupère tout les profils en bd
 	function Obtenir_profil()
 	{
-
+		/*Préconditions : 	- 
+		Selectionne tous les profils et les renvoie
+		*/
+		
 		require_once("BD_connexion.php");
  		$bd=connexion();
 
@@ -54,7 +64,11 @@
 // calcul le resultat de chaque profil en fonction des reponses de l'utilisateur.
 function calcul_genre($id_user, $NumProfil)
 {
-
+	/*Préconditions : 	- $id_user : l'id d'un utilisateur
+						- $NumProfil : l'id d'un profil
+		Calcule le score de l'utilisateur $id_user dans le profil $NumProfil et le renvoie
+	*/
+		
 	require_once("BD_connexion.php");
  	$bd=connexion();
 
@@ -100,6 +114,11 @@ function calcul_genre($id_user, $NumProfil)
 	// Verifie si un utilisateur à deja repondu à un groupe de question
 	function reponse_deja_presente($numuser,$numgroupe)
 	{
+		/*Préconditions : 	- $numuser : l'id d'un utilisateur
+							-numgroupe : id d'une groupe de proposition
+		renvoie quelque chose si l'utilisateur $numuser à deja répondu aux proposition du groupe $numgroupe
+		*/
+		
 		require_once("BD_connexion.php");
  		$bd=connexion();
 
@@ -118,6 +137,13 @@ function calcul_genre($id_user, $NumProfil)
 	// Fonction d'ajout des réponses de l'utilisateur dans la table repondre
 	function ajout_reponse_user($numuser,$numgroupe,$reponse1,$reponse2,$reponse3)
 	{
+		/*Préconditions : 	- $numuser : l'id d'un utilisateur
+							- $numgroupe : l'id d'un groupe de propositions
+							- $reponseX :  l'id d'une reponse
+		Selectionne tous les reponses de l'utilisateur $numuser et les renvoie
+		*/
+		
+
 		//connexion a la Base de donnée
 		require_once("BD_connexion.php");
  		$bd=connexion();
@@ -134,6 +160,10 @@ function calcul_genre($id_user, $NumProfil)
 	//Fonction qui permet de renvoyer le nombre de réponses de l'utilisateur ==> Pour savoir si il a terminer le test ou non
 	function Obtenir_nombre_reponses_user($numuser)
 	{
+		/*Préconditions : 	- $numuser : l'id d'un user
+		Cherche le nombre de réponse d'un utilisateur $numuser au test et le renvoie
+		*/
+
 		//connexion a la Base de donnée
 		require_once("BD_connexion.php");
  		$bd=connexion();
@@ -152,6 +182,9 @@ function calcul_genre($id_user, $NumProfil)
 	// Permet de supprimer les réponses de l'utilisateur qui sont dans la table repondre
 	function Supprimer_reponses_user($numuser)
 	{
+		/*Préconditions : 	- $numuser : l'id d'un user
+		Supprime toutes les réponses données par l'utilisateur $numuser
+		*/
 
 		require_once("BD_connexion.php");
  		$bd=connexion();

@@ -3,6 +3,11 @@
 	/* Obtient toute les réponses de l'utilisateur entré en paramètre*/
 	function Verif_mail_existant($email)
 	{
+
+		/*Préconditions : 	-$email : une string correspodant à l'email d'un utilisateur
+		Renvoie l'utilisateur ayant cet email s'ils existent sinon renvoie du vide
+		*/
+
 		//connexion a la Base de donnée
 		require_once("BD_connexion.php");
  		$bd=connexion();
@@ -17,6 +22,13 @@
 
 	function Creer_user($nom,$prenom,$email,$password)
 	{
+		/*Préconditions : 	- $nom : string correspondant au nom de l'utilisateur
+							- $prenom : string correspondant au prenom de l'utilisateur
+							- $email : string correspondant à l'email de l'utilisateur
+							- $password : string correspondant au mot de passe de l'utilisateur
+		Ajoute un utilisateur à la bdd avec nom = $nom, prenom =  $prenom, email = $email, password = $password
+		*/
+
 		//connexion a la Base de donnée
 		require_once("BD_connexion.php");
  		$bd=connexion();
@@ -34,6 +46,10 @@
 
 	function est_admin($email)
 	{
+		/*Préconditions : 	-$email : une string correspodant à l'email d'un utilisateur
+		Renvoie les utilisateurs ayant cet email s'ils existent sinon renvoie du vide
+		*/
+
 		//connexion a la Base de donnée
 		require_once("BD_connexion.php");
  		$bd=connexion();
@@ -47,6 +63,11 @@
 
 	function verif_connexion($email, $mdp)
 	{
+		/*Préconditions : 	-$email : une string correspodant à l'email d'un utilisateur
+							-$mdp : une string correspodant au mot de passe d'un utilisateur
+		Renvoie le nombre de personne qui possedent le couple $email $mdp
+		*/
+
 		// Connexion à la base de données
 		require_once("BD_connexion.php");
 	 	$bdd=connexion();
@@ -61,6 +82,12 @@
 
 	function modif_promo_user($numuser,$numpromo)
 	{
+
+		/*Préconditions : 	-$numuser : id d'un utilisateur
+							-$numpromo : id d'une promotion
+		Change la promotion d'un utilisateur
+		*/
+		
 		// Connexion à la base de données
 		require_once("BD_connexion.php");
 	 	$bdd=connexion();
