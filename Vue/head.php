@@ -19,7 +19,7 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
   crossorigin="anonymous"></script>
     
-    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style1.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway:500" rel="stylesheet" type='text/css'>
   </head>
 

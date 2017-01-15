@@ -34,6 +34,7 @@
 		return $reponses;
 	}
 
+	// Récupère tout les profils en bd
 	function Obtenir_profil()
 	{
 
@@ -96,27 +97,28 @@ function calcul_genre($id_user, $NumProfil)
 	return $score;
 }
 
-// Verifie si un utilisateur à deja repondu à un groupe de question
-function reponse_deja_presente($numuser,$numgroupe)
-{
-	require_once("BD_connexion.php");
- 	$bd=connexion();
+	// Verifie si un utilisateur à deja repondu à un groupe de question
+	function reponse_deja_presente($numuser,$numgroupe)
+	{
+		require_once("BD_connexion.php");
+ 		$bd=connexion();
 
- 	// On recupère le Profil de la proposition 
-	$req = $bd->prepare('SELECT * FROM repondre WHERE NumUser=:numuser and NumGroupe =:numgroupe');
-	$req->bindParam(':numuser', $numuser);
-	$req->bindParam(':numgroupe', $numgroupe);
+ 		// On recupère le Profil de la proposition 
+		$req = $bd->prepare('SELECT * FROM repondre WHERE NumUser=:numuser and NumGroupe =:numgroupe');
+		$req->bindParam(':numuser', $numuser);
+		$req->bindParam(':numgroupe', $numgroupe);
 
-	$req->execute();
-	$result = $req->fetch();
+		$req->execute();
+		$result = $req->fetch();
 	
-	return $result;
+		return $result;
 
-}
+	}
 
-function ajout_reponse_user($numuser,$numgroupe,$reponse1,$reponse2,$reponse3)
-{
-	//connexion a la Base de donnée
+	// Fonction d'ajout des réponses de l'utilisateur dans la table repondre
+	function ajout_reponse_user($numuser,$numgroupe,$reponse1,$reponse2,$reponse3)
+	{
+		//connexion a la Base de donnée
 		require_once("BD_connexion.php");
  		$bd=connexion();
 
@@ -127,9 +129,9 @@ function ajout_reponse_user($numuser,$numgroupe,$reponse1,$reponse2,$reponse3)
 
 		return 0;
 
+	}
 
-}
-
+	//Fonction qui permet de renvoyer le nombre de réponses de l'utilisateur ==> Pour savoir si il a terminer le test ou non
 	function Obtenir_nombre_reponses_user($numuser)
 	{
 		//connexion a la Base de donnée
@@ -145,6 +147,17 @@ function ajout_reponse_user($numuser,$numgroupe,$reponse1,$reponse2,$reponse3)
 
 		return $nb;
 
+	}
+
+	// Permet de supprimer les réponses de l'utilisateur qui sont dans la table repondre
+	function Supprimer_reponses_user($numuser)
+	{
+
+		require_once("BD_connexion.php");
+ 		$bd=connexion();
+
+ 		$req = $bd->prepare("DELETE FROM repondre WHERE NumUser =:numuser");
+		$req->execute(array (':numuser' => $numuser));
 	}
 
 ?>

@@ -140,7 +140,7 @@ foreach($profil as $key => $val)
 
   
         <div class="col s5  ">
-          <div class="card cyan darken-2">
+          <div class="card blue darken-2">
             <div class="card-content white-text">
               <span class="card-title"><h5 class="center "> Test de RIASEC terminé par <?php echo $nb_eleves?> personnes dans cette promo ! </h5></span>
               <p>Vous trouverez dans cette page un tableau trié par ordre décroissant. ATTENTION : Celui-ci prend seulement en compte les elèves de cette promotion qui ont terminé le questionnaire</p>
@@ -209,21 +209,21 @@ foreach($profil as $key => $val)
 
  <div class="container">
   <div class="row">
-      <div class="col s4 m4" style="background-color: #0097a7 ">
+      <div class="col s4 m4" style="background-color: #1976d2 ">
       </br>
         <div class=center>
           <a class="waves-effect  btn red center-align " href="#radar"> Radar</a>
         </div>
         </br>
       </div>
-      <div class="col s4 m4" style="background-color: #0097a7 ">
+      <div class="col s4 m4" style="background-color: #1976d2 ">
       </br>
         <div class=center>
           <a class="waves-effect  btn red center-align " href="#baton"> Baton </a>
         </div>
         </br>
       </div>
-      <div class="col s4 m4" style="background-color: #0097a7  ">
+      <div class="col s4 m4" style="background-color: #1976d2  ">
       </br>
         <div class=center>
           <a class="waves-effect  btn red center-align " href="#camembert"> Camembert</a>

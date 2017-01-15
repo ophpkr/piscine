@@ -32,7 +32,7 @@
 <div class="row">
 <div class="container">
     <div class="col s12  ">
-          <div class="card cyan darken-2">
+          <div class="card blue darken-2">
             <div class="card-content white-text">
               <span class="card-title"><h5 class="center "> Gestion des Promotions  </h5></span>
               <p class="center">Vous pouvez créer un nouvelle promotion en cliquant sur le bouton à droite. </p>

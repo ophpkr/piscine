@@ -26,20 +26,33 @@
   </nav>
 
 
-   <?php if (isset($_GET["msg"])) 
+   <?php if(isset($_GET["msg"])) 
   { 
 ?>
-  <p class="center-align red"><?php
-  echo $_GET["msg"];?></p>
+    <p class="center-align red"><?php
+
+    // Affiche le message de code incorrect ou session fermé
+    echo $_GET["msg"];?></p>
+  
+   <?php
+  
+    } else if(isset($_GET["supp"]))
+     { 
+    ?>
+    <p class="center-align red"><?php
+
+    //Affiche le message de suppression des réponses
+    echo $_GET["supp"];?></p>
   
    <?php
   
     }
+
   ?>
 </br>
 <div class="row">
    <div class="container ">
-   <div class="col s8 offset-s2" style="background-color: #0097a7   ">
+   <div class="col s8 offset-s2" style="background-color: #1976d2   ">
     <h3 class="center-align"> Entrer le code de votre promotion</h3>
      <p class="center-align"> Pour demarrer le test, veuillez renseigner le code de votre promotion</p>
     <div class="container" >

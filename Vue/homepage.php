@@ -11,54 +11,52 @@
   
    <?php }?>
 
-<div class="container" style="background: white">
-  <h2 class="center-align" id="degrade" > Bienvenue sur votre plateforme : Test de RIASEC</h2> 
+<div class="container">
+  <h3 class="center-align" id="degrade" > Bienvenue sur votre plateforme : Test de RIASEC</h3> 
 
 
-  <div class="row">
-    <div class="carousel">
-      <a class="carousel-item" href="http://www.polytech-montpellier.fr/index.php/formation/informatique-et-gestion-ig/presentation" target="_blank"><img src="images/ig.png"></a>
-      <a class="carousel-item" href="http://www.polytech-montpellier.fr/index.php/formation/eau-et-genie-civil-apprentissage/presentation" target="_blank"><img src="images/egc.png"></a>
-      <a class="carousel-item" href="http://www.polytech-montpellier.fr/index.php/formation/genie-biologique-agroalimentaire-gba/presentation" target="_blank"><img src="images/gba.png"></a>
-      <a class="carousel-item" href="http://www.polytech-montpellier.fr/index.php/formation/materiaux-mat/presentation" target="_blank"><img src="images/mat.png"></a>
-      <a class="carousel-item" href="http://www.polytech-montpellier.fr/index.php/formation/microelectronique-et-automatique-mea/presentation" target="_blank"><img src="images/mea.png"></a>
-      <a class="carousel-item" href="http://www.polytech-montpellier.fr/index.php/formation/mecanique-et-interactions-m-i/presentation" target="_blank"><img src="images/mi.png"></a>
-      <a class="carousel-item" href="http://www.polytech-montpellier.fr/index.php/formation/mecanique-structures-industrielles/presentation" target="_blank"><img src="images/msi.png"></a>
-      <a class="carousel-item" href="http://www.polytech-montpellier.fr/index.php/formation/systemes-embarques-se/presentation" target="_blank"><img src="images/se.png"></a>
-      <a class="carousel-item" href="http://www.polytech-montpellier.fr/index.php/formation/sciences-et-technologies-de-l-eau-ste/presentation" target="_blank"><img src="images/ste.png"></a>
+    <div class="row">
+      <div class="carousel" id="degrade">
+        <a class="carousel-item" href="http://www.polytech-montpellier.fr/index.php/formation/informatique-et-gestion-ig/presentation"><img src="images/ig.png"></a>
+        <a class="carousel-item" href="http://www.polytech-montpellier.fr/index.php/formation/eau-et-genie-civil-apprentissage/presentation"><img src="images/egc.png"></a>
+        <a class="carousel-item" href="http://www.polytech-montpellier.fr/index.php/formation/genie-biologique-agroalimentaire-gba/presentation"><img src="images/gba.png"></a>
+        <a class="carousel-item" href="http://www.polytech-montpellier.fr/index.php/formation/materiaux-mat/presentation"><img src="images/mat.png"></a>
+        <a class="carousel-item" href="http://www.polytech-montpellier.fr/index.php/formation/microelectronique-et-automatique-mea/presentation"><img src="images/mea.png"></a>
+        <a class="carousel-item" href="http://www.polytech-montpellier.fr/index.php/formation/mecanique-et-interactions-m-i/presentation"><img src="images/mi.png"></a>
+        <a class="carousel-item" href="http://www.polytech-montpellier.fr/index.php/formation/mecanique-structures-industrielles/presentation"><img src="images/msi.png"></a>
+        <a class="carousel-item" href="http://www.polytech-montpellier.fr/index.php/formation/systemes-embarques-se/presentation"><img src="images/se.png"></a>
+        <a class="carousel-item" href="http://www.polytech-montpellier.fr/index.php/formation/sciences-et-technologies-de-l-eau-ste/presentation"><img src="images/ste.png"></a>
+      </div>
     </div>
-  </div>
+
+
 
   <div class="row">
-    <div class="col s6">
-      <div class="col s12 m8 offset-m2 l6 offset-l3">
+      <div class="col s4 offset-s1">
+      
         <div class="card-panel grey lighten-5 z-depth-1">
           <div class="row valign-wrapper">
-            <div class="col s6">
               <img src="images/holland.jpg" alt="" class="circle responsive-img" width=80px;>
-            </div>
-              <div class="col s12">
                 <span class="black-text">
                   <I>John L. Holland (1919 - 2008) est un psychologue qui inventa le modèle RIASEC.</I>
                 </span>
-              </div>
-            </div>
           </div>
         </div>
       </div>
+     
 
-      <div class="col s6">
-        <div class="col s12 m8 offset-m2 l6 offset-l3">
+      <div class="col s5 offset-s1">
+        
           <div class="card-panel grey lighten-5 z-depth-1" >
-            <div class ="justify">     
-              Le modèle RIASEC ou code Holland, est une théorie sur les carrières et les choix vocationnels qui s'appuie sur les types psychologiques. Il identifie 6 types de personnalités en milieu professionnel1 qui sont à mettre en lien avec les intérêts professionnels.
-            </div>
+               
+              Le modèle RIASEC ou code Holland, est une théorie sur les carrières et les choix vocationnels qui s'appuie sur les types psychologiques. Il identifie 6 types de personnalités en milieu professionnel qui sont à mettre en lien avec les intérêts professionnels.
+           
           </div>
-        </div>
+       
       </div>
     </div>
-  </div>
 </div>
+
 
 
 
@@ -168,24 +166,20 @@
 </main>
 <?php include("./footer.php"); ?>
 
-  <!-- Script pour le menu slider qui defile-->
+
   <script>  
   $(".button-collapse").sideNav(); 
-  </script>
-  <script>  
+
   $(document).ready(function(){
     $('.slider').slider({full_width: true});
     });
-</script>
-<script>
+
    $(document).ready(function(){
       $('.carousel').carousel();
     });
-  </script>
+  
 
-
-<!-- Script pour le modal de connexion-->
-<script>
+//Script pour le modal de connexion
  $(document).ready(function(){
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
     $('.modal').modal();
@@ -193,16 +187,7 @@
 
       </script>
 
-<script> 
-// Pause slider
-$('.slider').slider('pause');
-// Start slider
-$('.slider').slider('start');
-// Next slide
-$('.slider').slider('next');
-// Previous slide
-$('.slider').slider('prev');
-</script>
+
 
   </body>
 </html>

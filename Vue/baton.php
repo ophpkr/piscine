@@ -57,7 +57,7 @@ var chart = AmCharts.makeChart("chartdiv3",
 
     }],
     "valueAxes": [{
-        "maximum": 50,
+        "maximum": 40,
         "minimum": 0,
         "axisAlpha": 0,
         "dashLength": 4,

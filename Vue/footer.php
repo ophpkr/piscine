@@ -2,7 +2,7 @@
     <div class="footer-copyright center-align" >
     
       <div class="container">
-      Projet Piscine 2017
+      <font color="white">Polytech Montpellier : projet piscine 2017</font>
       </div>
       
     </div>

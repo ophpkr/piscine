@@ -47,7 +47,7 @@
 <div class="container">
 
   <div class="col s5  ">
-          <div class="card cyan darken-2">
+          <div class="card blue darken-2">
             <div class="card-content white-text">
               <span class="card-title"><h5 class="center "> Groupe numero : <?php echo "$numGroupe"; ?></h5></span>
               <p>-Vous devez obligatoirement faire vos 3 choix pour passer au groupe suivant.</p>

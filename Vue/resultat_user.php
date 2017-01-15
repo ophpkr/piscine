@@ -87,10 +87,19 @@ foreach($profil as $key => $val)
 
 <div class="row">
 <div class="container">
+<div class="col s4 offset-s8">
+<div class=right>
+          <a class="waves-effect  btn red center-align " href="#recommencer"> Recommencer le questionnaire</a>
+  </div>
+</div>
+</div>
+<div class="container">
   <h3 class="center"> Vos résultats !</h3>
   
+
+  
         <div class="col s5  ">
-          <div class="card cyan darken-2">
+          <div class="card blue darken-2">
             <div class="card-content white-text">
               <span class="card-title"><h5 class="center "> Vous êtes <?php echo $array_profil[0]?> !  </h5></span>
               <p>Vous trouverez dans cette page le tableau trié par ordre décroissant de vos résultats de personnalité. </p>
@@ -151,21 +160,21 @@ foreach($profil as $key => $val)
 
  <div class="container">
   <div class="row">
-      <div class="col s4 m4" style="background-color: #0097a7 ">
+      <div class="col s4 m4" style="background-color: #1976d2 ">
       </br>
         <div class=center>
           <a class="waves-effect  btn red center-align " href="#radar"> Radar</a>
         </div>
         </br>
       </div>
-      <div class="col s4 m4" style="background-color: #0097a7 ">
+      <div class="col s4 m4" style="background-color: #1976d2 ">
       </br>
         <div class=center>
           <a class="waves-effect  btn red center-align " href="#baton"> Baton </a>
         </div>
         </br>
       </div>
-      <div class="col s4 m4" style="background-color: #0097a7  ">
+      <div class="col s4 m4" style="background-color: #1976d2  ">
       </br>
         <div class=center>
           <a class="waves-effect  btn red center-align " href="#camembert"> Camembert</a>
@@ -175,6 +184,23 @@ foreach($profil as $key => $val)
   </div>
 </div> 
 
+<div id="recommencer" class="modal  ">
+    <div class="modal-content">
+      <h5 class="center-align"><font color="red"> ATTENTION : Vos résultats sont sur le point d'être supprimé</font></h5>
+      <p class="center-align "> Voulez vous vraiment recommencer le questionnaire ?</p>
+   </div>
+   <form class="col s12 " method="post" action="../Controlleur/supprimer_resultat.php">
+   <div class="modal-footer">
+        <div class="row">
+           <div class="col s3 offset-s3">
+             <button class="waves-effect waves-light red btn" type="submit">Confirmer</button>
+           </div>
+           <div class="col s3 ">
+             <button class="waves-effect waves-light grey btn" type="submit">Annuler</button>
+           </div>
+       </div>
+       </div>
+  </div> 
 
   <div id="radar" class="modal  ">
     <div class="modal-content">
@@ -226,13 +252,7 @@ foreach($profil as $key => $val)
  <?php include("./footer.php"); ?>
 
 
-  <!--  Scripts
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="assets/js/materialize.js"></script>
-  <script src="assets/js/init.js"></script>-->
-   
-  <!--  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="assets/js/materialize.min.js"></script>-->
+ 
 
 <!-- Script pour le modal de connexion-->
 <script>

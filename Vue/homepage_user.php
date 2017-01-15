@@ -30,7 +30,7 @@
   <div class="container">
     <div class="row">
         <div class="col s8 offset-s2 ">
-          <div class="card cyan darken-2">
+          <div class="card blue darken-2">
             <div class="card-content white-text">
               <span class="card-title"><h3 class="center "> Introduction au Test de RIASEC</h3></span>
             </div>
