@@ -192,12 +192,11 @@ foreach($profil as $key => $val)
    <form class="col s12 " method="post" action="../Controlleur/supprimer_resultat.php">
    <div class="modal-footer">
         <div class="row">
-           <div class="col s3 offset-s3">
+           <div class="col s4 offset-s3">
              <button class="waves-effect waves-light red btn" type="submit">Confirmer</button>
            </div>
-           <div class="col s3 ">
-             <button class="waves-effect waves-light grey btn" type="submit">Annuler</button>
-           </div>
+   </form>
+           
        </div>
        </div>
   </div> 
