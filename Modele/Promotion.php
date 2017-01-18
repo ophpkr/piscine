@@ -1,10 +1,58 @@
 <?php
 	
-	/* Renvoie tout les eleves de la promo entré en paramètre qui ont répondu à au moin un groupe de proposition*/
+	/* Spécification fonctionnelle: 
+	
+	- Obtenir_reponses_promo : int -> [[int](1)](n) / donnée : int >0 , numéro de la promotion  dont on veut connaitre le résultat
+							/ résultat : [[int](1)](n), contient tous les numéros des users (int>=0) qui appartiennent
+							     	     à la promo prise en paramètre et ayant répondu à au moins un groupe de propostions
+								     
+	- Obtenir_user_repondre() -> [[int](1)](n) / donnée : aucun paramètre
+						   / résultat : [[int](1)](n), contient tous les NumUser des utilisateurs ayant répondu à 
+						   		au moins un groupe de propositions
+								
+	- Correspondance_promo_code : string -> int / donnée : string correspondant au code de la promotion dont on cherche à connaître le NumPromo
+						    / résultat : int (entre 0 et 8) correspondant au NumPromo que l'on cherche, ERREUR si 
+						                 aucune promo n'a ce CodePromo
+
+	- Creer_promo : string x int x string  / données : le premier string correspond au nom de la promo que l'on veut créer, l'int>0 correspond 
+							   à l'année de la promo que l'on veut créer, l'autre string correspond au code
+							   donné à la promo que l'on crée
+					       / résultat : création de la promotion, comprenant tous les paramètres voulus, dans la bdd
+					       
+	- Verif_presence_codepromo : string -> int / donnée : string correspondant au CodePromo dont on cherche à connaître le nombre de 
+								 fois qu'il apparaît
+						   / résultat : int, vaut 0 ou 1, nombre de fois que le CodePromo apparaît dans la bdd
+						      		   
+	- Obtenir_promos : string -> [[int],[string],[int],[string],[int]] / donnée : string correspondant au NomPromo dont on cherche à connaître
+										les informations
+								     / résultat : [[int >=0 correspondant au NumPromo],[string correspondant
+								     		  au NomPromo], [int >0 correspondant à l'année de la promo],
+										  [string correspondant au CodePromo], [int correspondant à 
+										  l'état ouvert (1) ou fermé(0) de la promo]],
+										  ERREUR si le NomPromo n'existe pas dans la bdd
+										  
+	- Obtenir_nombre_réponse : int -> int / donnée : int (entre 0 et 8) correspondant au NumPromo dont on veut connaitre le nombre d'élèves ayant
+							 répondu à au moins un groupe dans la promo
+					      / résultat : int >= 0, correspond au nombre d'élèves de cette promotion ayant répondu à au moins un groupe
+					     
+	- Etat : int -> int / donnée : int >0, correspondant au NumPromo
+			    / résultat : int correspondant à l'état, ouvert (int = 1) ou fermé (int = 0) de la promo
+			      
+	- Modifier_etat(int, int) / données : le premier int>0 correspond au NumPromo dont on veut changer l'état, le deuxieme int correspond à l'état ouvert (int = 1)
+					      ou fermé (int = 0) de la promotion 
+				  / résultat : modifie l'état de la promotion dans la bdd, ERREUR si NumPromo n'existe pas
+	
+	- Supprimer_promo(int) / donnée : int >0 NumPromo que l'on veut supprimer 
+			       / résultat : suppression de la promo de la bdd, ERREUR si le NumPromo n'existe pas
+			      
+	- Obtenir_info_promo : int -> [[int],[string],[int],[string],[int]] /meme func que Obtenir_promos
+	
+	
+	Renvoie tout les eleves de la promo entré en paramètre qui ont répondu à au moin un groupe de proposition*/
 	function Obtenir_reponses_promo($numPromo)
 	{
 		/*Préconditions : 	- $numPromo : l'id d'une promo
-		Selectionne tous les utilisateurs d'une promotion ayant répondus à une question et les renvoie
+		Selectionne tous les utilisateurs d'une promotion ayant répondu à une question et les renvoie
 		*/
 
 		//connexion a la Base de donnée
@@ -12,7 +60,7 @@
  		$bd=connexion();
  		
 
-		// recupere toute les personnes de la promo entré en paramètre qui ont répondu aux questionnaire
+		// recupere toutes les personnes de la promo entrée en paramètre qui ont répondu au questionnaire
 		$req = $bd->prepare('SELECT DISTINCT rep.NumUser FROM repondre as rep, user as us WHERE us.NumPromo =:numPromo and us.NumUser =rep.NumUser ');
 
 		//$req = $bd->prepare('SELECT DISTINCT NumUser from user WHERE NumPromo =:numPromo ');
