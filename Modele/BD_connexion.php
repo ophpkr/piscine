@@ -1,5 +1,6 @@
 <?php 
 function connexion()
+	//Permet de se connecter à la bdd
 {
 	try
 	{
