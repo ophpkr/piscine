@@ -2,7 +2,13 @@
 	
 	/* Spécification fonctionnelle : 
 	
-	- Obtenir_reponses_user : int -> [[
+	- Obtenir_reponses_user : int -> [[int](3)](12) / donnée : int >0 correspondant au NumUser dont on veut connaître les réponses
+							/ résultat : [[int corresponndant au NumPop choisi](3)](12), ERREUR si le NumUser n'existe pas
+							
+	- Obtenir_profil_question : int -> string / donnée : int (entre 1 et 72) correspondant au NumProp de la proposition dont on veut connaître le profil associé
+						  / résultat : string correspondant au NomProfil associé à la la proposition concerné
+	
+	- Obtenir_profil_question : int -> [[],[],[],[]]    /
 	
 	
 	
