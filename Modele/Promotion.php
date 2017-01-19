@@ -236,7 +236,7 @@
 
 	}
 
-	// Creation d'un promotion
+	
 	function Supprimer_promo($numpromo)
 	{
 		/*Préconditions : 	- $numpromo = l'id d'une promotion
