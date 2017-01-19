@@ -1,4 +1,17 @@
 <?php
+
+/*Spécification fonctionnelle : 
+		
+	- Obtenir_propositions_groupe : int -> [[string](6)] / donnée : int entre 1 et 12, correspondant au NumGroupe dont on veut obtenir
+									les propositions
+							     / résultat : [[string, correspondant au contenu de chaque proposition](6)]
+							     
+	- Modifier_proposition(int, string) / données : / données :int compris entre 1 et 72 correspondant au NumProp dont on veut modifier le contenu
+								   et un string correspondant au contenu de la proposition à modifier
+							/ résultat : modifie le contenu de la proposition dans la bdd
+			
+		*/
+
 	function Obtenir_propositions_groupe($numGroupe)
 	{
 		/*Précondition : $numGroupe : un entier correspondant à un numéro de groupe de proposition
