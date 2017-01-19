@@ -1,6 +1,8 @@
 <?php
 	
 	/* Specification fonctionnelle
+	
+	- Verif_mail_existant : int -> 
 
 
 	/* Obtient toute les réponses de l'utilisateur entré en paramètre*/
