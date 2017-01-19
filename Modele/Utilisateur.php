@@ -1,5 +1,8 @@
 <?php
 	
+	/* Specification fonctionnelle
+
+
 	/* Obtient toute les réponses de l'utilisateur entré en paramètre*/
 	function Verif_mail_existant($email)
 	{
