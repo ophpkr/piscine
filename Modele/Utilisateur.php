@@ -2,8 +2,15 @@
 	
 	/* Specification fonctionnelle
 	
-	- Verif_mail_existant : int -> 
-
+	- Verif_mail_existant : string -> [int, string, string, string, string, int, int] / donnée : string correspond à un mail user
+						 / résultat : [int, string, string, string, string, int,int], crrespondant à un tableau contenant
+						 le NumUser, le NomUser, le PrenomUser, le MailUser, le PwdUser, int = 0 ou 1 pour caracteriser eleve ou admin
+						 admin, le NumPromo
+						
+	- Creer_user : string x string x string x string  / données : 4 string correspondant aux Nom, Prenom, Mail et MdP de l'user que l'on souhaite créer
+							  / resultat : création de l'utilisateur dans la bdd avec les données choisies
+							  
+	
 
 	/* Obtient toute les réponses de l'utilisateur entré en paramètre*/
 	function Verif_mail_existant($email)
