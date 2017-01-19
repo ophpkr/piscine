@@ -8,10 +8,11 @@
 	- Obtenir_profil_question : int -> string / donnée : int (entre 1 et 72) correspondant au NumProp de la proposition dont on veut connaître le profil associé
 						  / résultat : string correspondant au NomProfil associé à la la proposition concerné
 	
-	- Obtenir_profil_question : int -> [[],[],[],[]]    /
+	- Obtenir_profil :  -> [[int],[string]](6) / résultat : retourne tous les profils (leur id et leur nom) sous forme de
+								[[int, correspondant au NumProfil],[string, correspondant au NomProfil]](6) 
 	
 	
-	
+	- 
 	
 	
 	
