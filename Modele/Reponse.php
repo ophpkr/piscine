@@ -1,17 +1,28 @@
 <?php
 	
-	/* Obtient toute les réponses de l'utilisateur entré en paramètre*/
+	/* Spécification fonctionnelle : 
+	
+	- Obtenir_reponses_user : int -> [[
+	
+	
+	
+	
+	
+	
+	
+	
+	*/
 	function Obtenir_reponses_user($numuser)
 	{
 		/*Préconditions : 	- $numuser : l'id d'un utilisateur
-		Selectionne tous les reponses de l'utilisateur $numuser et les renvoie
+		Selectionne toutes les reponses de l'utilisateur $numuser et les renvoie
 		*/
 
 		//connexion a la Base de donnée
 		require_once("BD_connexion.php");
  		$bd=connexion();
 
-		// chercher toute les réponse de l'utilisateur dans la table repondre
+		// chercher toutes les réponses de l'utilisateur dans la table repondre
 		$req = $bd->prepare('SELECT * FROM repondre WHERE NumUser= :numuser');
 		$req->bindParam(':numuser', $numuser);
 		$req->execute();
