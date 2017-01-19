@@ -12,9 +12,30 @@
 								[[int, correspondant au NumProfil],[string, correspondant au NomProfil]](6) 
 	
 	
-	- 
+	- calcul_genre : int * int ->  int /données : le premier int > 0 correspond au NumUser, le deuxieme au NumProfil (compris entre 1 et 6)
+						      dont on veut connaitre le résultat total 
+					   / resultat : int correspondant au score obtenu par l'utilisateur dans le profil
 	
+	- reponse_deja_presente : int x int -> [int](3) / données : le premier int > 0 correspond au NumUser pour lequel on veut savoir s'il a répondu
+								   au groupe de NumGroupe (2e int en parametre compris entre 1 et 12)
+							/ résultat : [int](3) tableau comprenant des entiers >0 correspondants au réponses
+								   choisies par l'utilisteur pour le groupe, ERREUR si le NumUser n'existe pas
 	
+	- ajout_reponse_user : int x int x int x int x int  / données : int > 0 correspondant au NumUser, int entre 1 et 12 correspondant au NumGroupe
+									et les 3 derniers int > 0 correspondent aux 3 propositions choisies par l'utilisateur
+									par l'utilisateur pour ce groupe
+							    / résultat : insert dans la table 'repondre' les données passées en parametres,
+							    		 ERREUR si le NumUser n'existe pas
+	
+	- Obtenir_nombre_reponses_user : int -> int / donnée : int > 0 correspondant au NumUser
+						    / résultat : int > 0 correspondant au nombre de groupe auquel a repondu l'utilisateur,
+						    		 ERREUR si NumUser n'existe pas
+								 
+	
+	- Supprimer_reponses_user : int  / donnée : int > 0 correspondant au NumUser pour lequel on veut supprimer les réponses
+					 / résultat : toutes les réponses deja enregistrées dans la table 'repondre' pour cet utilisateur 
+					 	      sont supprimées de la bdd
+	 
 	
 	
 	
@@ -190,7 +211,6 @@ function calcul_genre($id_user, $NumProfil)
 		$req->execute(array(':numuser' => $numuser));
 		$res=$req->fetch();
 
-		//On compte le nombre de ligne pour constater la presence ou non du couple email+mdp dans la bd
 		$nb =$res["cpt"];
 
 		return $nb;
