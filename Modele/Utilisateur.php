@@ -10,7 +10,19 @@
 	- Creer_user : string x string x string x string  / données : 4 string correspondant aux Nom, Prenom, Mail et MdP de l'user que l'on souhaite créer
 							  / resultat : création de l'utilisateur dans la bdd avec les données choisies
 							  
-	
+	- est_admin : string -> [int, string, string, string, string, int, int] / donnée : string correspondant au mail de l'user
+						/ résultat : [int, string, string, string, string, int,int], crrespondant à un tableau contenant
+						 le NumUser, le NomUser, le PrenomUser, le MailUser, le PwdUser, int = 0 ou 1 pour caracteriser eleve ou admin
+						 admin, le NumPromo
+						 
+	- verif_connexion : string x string -> int / données : 2 string correspondant au MailUser et PwdUser pour lesquels on veut savoir si leur 
+							       combinaison est correcte
+						   / résultat : int correspondant au nombre de fois que cette combinaison apparait dans la bdd
+						   
+	- modif_promo_user : int x int  / données : int > 0 correspondant au NumUser auquel on veut attribuer le 2 eme int (compris entre 1 et 9)
+						    correspondant au NumPromo 
+					/ résultat : on modifie le numero de promo de l'user dans la bdd
+						 
 
 	/* Obtient toute les réponses de l'utilisateur entré en paramètre*/
 	function Verif_mail_existant($email)
