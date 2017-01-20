@@ -2,7 +2,7 @@
 
 require('../Modele/Utilisateur.php');
 
-     //Verifie si tout les champs ont été rempli
+     //Verifie si tous les champs ont été remplis
      if(isset($_POST['nom']) AND isset($_POST['prenom']) AND isset($_POST['email']) AND isset($_POST['password']) AND isset($_POST['vpassword']))
      {
      	// Verifie si les mot de passes sont similaire
@@ -12,8 +12,7 @@ require('../Modele/Utilisateur.php');
 			if(!preg_match('/^[a-zA-Z- ]+$/', $_POST['nom']))
         	//Si le nom entré est vide ou si le nom entré contient des caractères non acceptés (i.e. autres que a-z,A-Z et _)
             {
-                //Rentre dans le tableau erreur, pour la clé 'nom' : 'Votre nom n'est pas valide'
-                  $msg ="Nom incorrecte";
+                  $msg ="Nom incorrect";
 		   		  header("location:../Vue/homepage.php?msg=" .$msg);
 			 	  exit();          
             }
@@ -22,7 +21,7 @@ require('../Modele/Utilisateur.php');
         	// Validation du prenom
         	if(!preg_match('/^[a-zA-Z- ]+$/', $_POST['prenom']))
             {
-               	  $msg ="Prenom incorrecte ";
+               	  $msg ="Prenom incorrect";
 		   		  header("location:../Vue/homepage.php?msg=" .$msg);
 			 	  exit();            
             }
