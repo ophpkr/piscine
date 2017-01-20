@@ -14,7 +14,7 @@ require('../Modele/Utilisateur.php');
             {
                   $msg ="Nom incorrect";
 		   		  header("location:../Vue/homepage.php?msg=" .$msg);
-			 	  exit();          
+			 	        
             }
         
         
@@ -23,7 +23,7 @@ require('../Modele/Utilisateur.php');
             {
                	  $msg ="Prenom incorrect";
 		   		  header("location:../Vue/homepage.php?msg=" .$msg);
-			 	  exit();            
+			 	            
             }
         	
         	
@@ -40,7 +40,7 @@ require('../Modele/Utilisateur.php');
 		   	{
 		   		  $msg ="Adresse mail deja utilisé";
 		   		  header("location:../Vue/homepage.php?msg=" .$msg);
-			 	  exit();
+			 	 
 			}
 
 			//  Sinon on crée l'utilisateur. (ajout en bd)
