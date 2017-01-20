@@ -4,7 +4,7 @@ require('../Modele/Promotion.php');
 	// Si on a reçu le numpromo et que le cookie de l'admin est tjr actif
 	if(isset($_GET["numpromo"]) and isset($_COOKIE["admin"]))
 	{
-		$numpromo = $_GET["numpromo"];
+		$numpromo = htmlentities($_GET["numpromo"]);
 
 		$etat= Etat($numpromo);
 		$etat = $etat["OuverturePromo"];
