@@ -6,8 +6,8 @@ require('../Modele/Proposition.php');
 if( (!empty($_POST['numprop'])) && (!empty($_POST['contenuprop'])) && (!empty($_COOKIE['admin'])))
 {
 
-	$numprop=$_POST['numprop'];
-	$contenuprop=$_POST['contenuprop'];
+	$numprop=htmlentities($_POST['numprop']);
+	$contenuprop=htmlentities($_POST['contenuprop']);
 	
 	
 
@@ -17,13 +17,13 @@ if( (!empty($_POST['numprop'])) && (!empty($_POST['contenuprop'])) && (!empty($_
 	
 				$msg ="La proposition à bien été modifié ";
 		   		header("location:../Vue/propositions.php?propok=" .$msg);
-			 	exit();  
+			 	  
 }
 else
 {
 				$msg ="Vous devez remplir la proposition ";
 		   		header("location:../Vue/propositions.php?propno=" .$msg);
-			 	exit();  
+			 	  
 }
 
 ?>
