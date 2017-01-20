@@ -8,15 +8,15 @@ require('../Modele/Reponse.php');
 
         if(isset($_POST["codepromo"]) AND  isset($_COOKIE["user"]))
         	{
-        		$codepromo=$_POST["codepromo"];
+        		$codepromo=htmlentities($_POST["codepromo"]);
        		 	$numuser = $_COOKIE["user"];
 
        		 	// Renvoie la promo à laquelle appartient ce code
         		$res= Correspondance_promo_code($codepromo);
 
         		$numpromo=$res['NumPromo'];
-                $etat= Etat($numpromo);
-                $etat = $etat["OuverturePromo"];
+                	$etat= Etat($numpromo);
+                	$etat = $etat["OuverturePromo"];
 
         		// Si la requete a renvoyé une promo
         		if(!empty($numpromo) and $etat == 1)
@@ -44,7 +44,7 @@ require('../Modele/Reponse.php');
         		{
         		  $msg ="Code Promo incorrecte ou session non ouverte ";
 		   		  header("location:../Vue/code_promo.php?msg=" .$msg);
-			 	  exit(); 
+			 	   
         		}
         	}
         // Pas de code entré ou cookie désactivé
@@ -53,5 +53,5 @@ require('../Modele/Reponse.php');
 
         		$msg ="Veuillez entrer un mot de passe de Promo ";
 		   		header("location:../Vue/code_promo.php?msg=" .$msg);
-			 	exit(); 
+			 	
         	}	
