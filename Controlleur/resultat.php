@@ -5,8 +5,8 @@
 		if(isset($_COOKIE["user"]))
 		{
 					
-					$numuser=$_COOKIE["user"];
-					$nb_reponses = Obtenir_nombre_reponses_user($numuser);
+			$numuser=$_COOKIE["user"];
+			$nb_reponses = Obtenir_nombre_reponses_user($numuser);
 
                     // Si il a 12 réponse en bd c'est qu'il a terminer le test
                     if($nb_reponses == 12)
@@ -16,8 +16,8 @@
                     else
                     {
                         $msg ="Vous ne pouvez pas accéder aux résultats sans avoir terminé le questionnaire ";
-		   				header("location:../Vue/code_promo.php?msg=" .$msg);
-			 			exit();            
+		   	header("location:../Vue/code_promo.php?msg=" .$msg);
+			 		            
                     }
         }
         else
