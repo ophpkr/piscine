@@ -11,24 +11,24 @@ require('../Modele/Reponse.php');
         		$codepromo=$_POST["codepromo"];
        		 	$numuser = $_COOKIE["user"];
 
-       		 	// Renvoie la promo a laquel appartient ce code
+       		 	// Renvoie la promo à laquelle appartient ce code
         		$res= Correspondance_promo_code($codepromo);
 
         		$numpromo=$res['NumPromo'];
                 $etat= Etat($numpromo);
                 $etat = $etat["OuverturePromo"];
 
-        		// Si la requete à renvoyer une promo
+        		// Si la requete a renvoyé une promo
         		if(!empty($numpromo) and $etat == 1)
         		{
 
-        			//Affectation de l'utilisateur a sa promotion
+        			//Affectation de l'utilisateur à sa promotion
         			modif_promo_user($numuser,$numpromo);
 
-                    // On verifie si l'utilisateur n'a pas deja réaliser le test
+                    // On verifie que l'utilisateur n'a pas deja réalisé le test
                     $nb_reponses = Obtenir_nombre_reponses_user($numuser);
 
-                    // Si il a 12 réponse en bd c'est qu'il a terminer le test
+                    // Si il a 12 réponses en bd c'est qu'il a terminé le test
                     if($nb_reponses == 12)
                     {   
                         header('Location: ../Vue/resultat_user.php');
@@ -39,7 +39,7 @@ require('../Modele/Reponse.php');
                     }
         			
         		}
-                // Le code n'appartient a aucune promo
+                // Le code n'appartient à aucune promo
         		else
         		{
         		  $msg ="Code Promo incorrecte ou session non ouverte ";
