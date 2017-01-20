@@ -59,13 +59,13 @@ require('../Modele/Reponse.php');
 			{
 				$numgroupe= $numgroupe +1;
 				header('Location: ../Vue/questionnaire.php?numero= '.$numgroupe );
-				exit(); 
+				
 			}
 			//L'utilisateur à répondu à tout les groupes donc => Direction le resultat
 			else
 			{
 				header('Location: ../Vue/resultat_user.php');
-				exit(); 
+				 
 			} 
 
 		}
@@ -74,7 +74,7 @@ require('../Modele/Reponse.php');
 		else
 		{
 			header('Location: ../Vue/questionnaire.php?numero= '.$numgroupe);
-			exit(); 
+			 
 		}
 			
 	}
@@ -84,7 +84,7 @@ require('../Modele/Reponse.php');
 	{
 		
 		header('Location: ../Vue/questionnaire.php?numero= '.$numgroupe);
-		exit();   
+		   
 	}
 
 ?>
